@@ -4,12 +4,104 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Gallery</title>
+    <style>
+      body {
+        font-family: Montserrat, sans-serif;
+        color: #2e2f42;
+      }
+
+      button {
+        font-family: Montserrat;
+        font-weight: 500;
+        height: 45px;
+        width: 91px;
+        background-color: #4e75ff;
+        color: #ffffff;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        margin-left: 5px;
+      }
+
+      input {
+        height: 40px;
+        width: 0 auto;
+        font-size: 16px;
+        letter-spacing: 4%;
+        border: 1px solid;
+        border-radius: 6px;
+        padding-left: 16px;
+      }
+
+      .form {
+        text-align: center;
+        padding-top: 15px;
+      }
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        gap: 24px;
+        padding: 0;
+      }
+
+      .image-info {
+        display: flex;
+        justify-content: center;
+        gap: 55px;
+      }
+
+      .image-info .info-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+      }
+
+      .info-item {
+        gap: 6px;
+        padding-bottom: 6px;
+      }
+
+      .gallery li {
+        list-style: none;
+        width: calc(33.333% - 20px);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid #808080;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .label {
+        font-weight: bold;
+      }
+    </style>
+    <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-8c59ed88.js">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-1cd1f9d9.css">
   </head>
   <body>
-    <section>
-      <a href="./index.html">Go to home</a>
-      <h1>Gallery</h1>
-    </section>
+    <form id="search-form" class="form">
+      <input type="text" name="query" placeholder="Search images..." required />
+      <button type="submit">Search</button>
+    </form>
+    <div id="loader" class="loader"></div>
+    <ul id="gallery" class="gallery"></ul>
+    
   </body>
 </html>
