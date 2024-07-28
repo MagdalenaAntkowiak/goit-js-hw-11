@@ -17,11 +17,13 @@ async function fetchImages(query) {
 const form = document.querySelector('#search-form');
 const gallery = document.querySelector('#gallery');
 const loader = document.querySelector('#loader');
+const input = document.querySelector('input[name="query"]');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
   const query = event.target.elements.query.value;
   gallery.innerHTML = '';
+  input.value = '';
   loader.style.display = 'block';
 
   fetchImages(query)
